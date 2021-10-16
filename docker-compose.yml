@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  spammer:
+    build: .
+    container_name: spammer
+    restart: on-failure
+    stop_signal: SIGINT
+    stdin_open: true
+    tty: true
+    init: true
+    environment:
+      REQUEST_URL: "https://discord-jobs.com/index.php"
+      USERNAME_METHOD: "email"
+    deploy:
+      resources:
+        limits:
+          memory: "128M"
+          cpus: "0.5"
