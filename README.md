@@ -8,7 +8,7 @@ This script simply sends the request from your machine and does **not** attempt 
 This script supports the following environment variables to allow you to modify the behaviour.
 
 | Environment Variable | Description | Example | Default Value |
-| --- | --- | --- | --- |
+| --- | --- | :-: | :-: |
 | `REQUEST_URL` | **Required.** <br /> URL to send the `POST` request to. | `https://discord-jobs.net` | None |
 | `REQUEST_TIMEOUT` | Time (in milliseconds) to wait before timing the request out. | `5000` | `10000` |
 | `REQUEST_COOKIE` | Cookie to be sent along each request. | `PHPSESSID=qiio0` | None |
