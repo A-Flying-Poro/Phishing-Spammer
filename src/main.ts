@@ -122,6 +122,9 @@ async function main() {
                 backoffTime = backoffTime == 0 ? backoffInitial : backoffTime + backoffIncrement;
                 console.log(`Backing off for ${backoffTime / 1000}s...`);
                 await wait(backoffTime);
+            } else if (response?.status == 404) {
+                console.error(`Received 404 Not Found. Is the URL correct?`);
+                break;
             } else {
                 backoffTime = 0;
                 const waitTime = getRandomInt(intervalDelayMin, intervalDelayMax);
