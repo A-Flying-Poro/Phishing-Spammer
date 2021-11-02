@@ -74,11 +74,11 @@ async function main() {
             const username = usernameMethod.toLowerCase() == 'email' ? generateEmail() : generateUsername();
             const password = generatePassword(passwordLengthMin, passwordLengthMax);
 
-            console.log(`Sending: Username: "${username}", Password: "${password}"`);
-
             const payload = new URLSearchParams();
             payload.append(keyUsername, username);
             payload.append(keyPassword, password);
+
+            console.log(`Sending payload:`, payload);
 
             let response: Response | null = null;
             let errored = false;
